@@ -32,6 +32,8 @@ class Team(models.Model):
 
 class Game(models.Model):
     name = models.CharField(unique=True, max_length=64)
+    
+    turn = models.IntegerField(default=0)  # zero-based turn numbers
 
     def __str__(self):
         return self.name
