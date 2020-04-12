@@ -1,0 +1,11 @@
+<h1>{{ player.name }}</h1>
+
+Belongs to Team: <a href="/team/{{ team.id }}">{{ team.name }}</a>
+
+<p></p>
+Words created:
+<ul>
+{% for word in words_created.all %}
+    <li>{{ word.value }}</li>
+{% endfor %}
+</ul>

@@ -22,12 +22,17 @@ urlpatterns = [
     path("", views.index, name="index"),
     # path('polls/', include('polls.urls')),  # Include other apps' urls
     # ex: /polls/
-    path('', views.index, name='index'),
-    # ex: /polls/5/
-    path('<int:word_id>/', views.detail, name='detail'),
-    # ex: /polls/5/results/
-    path('<int:word_id>/results/', views.results, name='results'),
-    # ex: /polls/5/vote/
-    path('<int:word_id>/vote/', views.vote, name='vote'),
+    path('', views.index, name='index'),    # FUTURE - change this to game landing page
+    path('word/', views.index, name='index'),
+    path('word/<int:word_id>/', views.word_detail, name='word_detail'),
+    path('word/<int:word_id>/results/', views.word_results, name='results'),
+    path('word/<int:word_id>/vote/', views.word_vote, name='vote'),
+    path('word/create/', views.word_create, name='word_create'),
+    path('player/', views.player_index, name='player_index'),
+    path('player/<int:player_id>/', views.player_detail, name='player_detail'),
+    path('team/', views.team_index, name='team_index'),
+    path('team/<int:team_id>/', views.team_detail, name='team_detail'),
+    path('game/', views.game_index, name='game_index'),
+    path('game/<int:game_id>/', views.game_detail, name='game_detail'),
 ]
 
