@@ -1,0 +1,14 @@
+<h1>{{ team.name }}</h1>
+
+Belongs to game: <a href="/game/{{ game.id }}">{{ game.name }}</a>
+
+<br>
+Current score: {{ team.score }}
+
+<br><br>
+Players on the team:
+<ul>
+{% for player in team.players.all %}
+    <li><a href="/player/{{ player.id }}">{{ player.name }}</a></li>
+{% endfor %}
+</ul>

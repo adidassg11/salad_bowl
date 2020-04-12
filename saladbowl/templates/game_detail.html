@@ -1,0 +1,12 @@
+<h1>{{ game.name }}</h1>
+
+Whose turn: Team index {{ game.turn }}
+
+<br><br>
+
+Teams playing:
+<ul>
+{% for team in game.teams.all %}
+    <li><a href="/team/{{ team.id }}">{{ team.name }}</a></li>
+{% endfor %}
+</ul>
