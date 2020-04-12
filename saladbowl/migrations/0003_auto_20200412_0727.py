@@ -7,34 +7,45 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('saladbowl', '0002_auto_20200404_0444'),
+        ("saladbowl", "0002_auto_20200404_0444"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='game',
-            name='turn',
-            field=models.IntegerField(default=0),
+            model_name="game", name="turn", field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='game',
-            name='words_per_person',
+            model_name="game",
+            name="words_per_person",
             field=models.IntegerField(default=3),
         ),
         migrations.AddField(
-            model_name='word',
-            name='creator',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='words', to='saladbowl.Player'),
+            model_name="word",
+            name="creator",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="words",
+                to="saladbowl.Player",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='player',
-            name='team',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='players', to='saladbowl.Team'),
+            model_name="player",
+            name="team",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="players",
+                to="saladbowl.Team",
+            ),
         ),
         migrations.AlterField(
-            model_name='team',
-            name='game',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='teams', to='saladbowl.Game'),
+            model_name="team",
+            name="game",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="teams",
+                to="saladbowl.Game",
+            ),
         ),
     ]

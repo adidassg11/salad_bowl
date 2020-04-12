@@ -7,6 +7,11 @@ Whose turn: Team index {{ game.turn }}
 Teams playing:
 <ul>
 {% for team in game.teams.all %}
-    <li><a href="/team/{{ team.id }}">{{ team.name }}</a></li>
+    <li><a href="{% url 'team_detail' team.id %}">{{ team.name }}</a></li>
 {% endfor %}
+</ul>
+
+Rules:
+<ul>
+    <li>Number of words per person: {{ game.words_per_person }}</li>
 </ul>

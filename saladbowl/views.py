@@ -1,4 +1,5 @@
 from django.http import HttpResponse, Http404
+
 # from django.template import loader
 from django.shortcuts import get_object_or_404, render  # This replaces the two above ^^
 
@@ -7,13 +8,13 @@ from .models import Player, Word, Team, Game
 
 def index(request):
     word_list = Word.objects.all()
-    output = ', '.join([w.value for w in word_list])
+    output = ", ".join([w.value for w in word_list])
 
     # template = loader.get_template("all_words.html")
-    #context = {'latest_word_list': word_list}  # show "no available'.....
-    context = {'all_words': word_list}
+    # context = {'latest_word_list': word_list}  # show "no available'.....
+    context = {"all_words": word_list}
 
-    #return HttpResponse("Hello, world. You're at the polls index. here are the words: {}".format(output))
+    # return HttpResponse("Hello, world. You're at the polls index. here are the words: {}".format(output))
     # return HttpResponse(template.render(context, request))
     return render(request, "all_words.html", context)
 
@@ -30,7 +31,9 @@ def word_detail(request, word_id):
     creator = word.creator
 
     print(game, game.name)
-    return render(request, "word_detail.html", {"word": word, "game": game, "creator": creator})
+    return render(
+        request, "word_detail.html", {"word": word, "game": game, "creator": creator}
+    )
 
 
 def word_results(request, word_id):
@@ -48,9 +51,9 @@ def word_create(request):
 
 def player_index(request):
     players = Player.objects.all()
-    player_names = ', '.join([p.name for p in players])
+    player_names = ", ".join([p.name for p in players])
     print(player_names)
-    context = {'players': players}
+    context = {"players": players}
     return render(request, "player.html", context)
 
 
@@ -61,12 +64,16 @@ def player_detail(request, player_id):
     print(words_created)
 
     print(player.name, team.name)
-    return render(request, "player_detail.html", {"player": player, "team": team, "words_created": words_created})
+    return render(
+        request,
+        "player_detail.html",
+        {"player": player, "team": team, "words_created": words_created},
+    )
 
 
 def team_index(request):
     teams = Team.objects.all()
-    context = {'teams': teams}
+    context = {"teams": teams}
     return render(request, "teams.html", context)
 
 
@@ -79,7 +86,7 @@ def team_detail(request, team_id):
 
 def game_index(request):
     games = Game.objects.all()
-    context = {'games': games}
+    context = {"games": games}
     return render(request, "games.html", context)
 
 

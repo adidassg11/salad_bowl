@@ -6,13 +6,9 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('saladbowl', '0001_initial'),
+        ("saladbowl", "0001_initial"),
     ]
 
     operations = [
-        migrations.RenameField(
-            model_name='word',
-            old_name='stage',
-            new_name='round',
-        ),
+        migrations.RenameField(model_name="word", old_name="stage", new_name="round",),
     ]
