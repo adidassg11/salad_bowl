@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'saladbowl/style.css' %}">
+
 {% if teams %}
     <ul>
     {% for team in teams %}

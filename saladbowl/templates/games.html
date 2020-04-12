@@ -1,3 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'saladbowl/style.css' %}">
+
+<h1>Welcome to Salad Bowl!</h1>
+
+Here are the games in progress:
 {% if games %}
     <ul>
     {% for game in games %}

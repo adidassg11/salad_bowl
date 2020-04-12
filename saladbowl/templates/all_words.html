@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'saladbowl/style.css' %}">
+
 {% if all_words %}
     <ul>
     {% for word in all_words %}

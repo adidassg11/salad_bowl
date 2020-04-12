@@ -1,0 +1,12 @@
+li a {
+    color: green;
+    font-weight: 800;
+}
+
+
+body {
+    // Add image of salad bowl to the background, stretch to fit
+    //background: white url("images/salad_bowl.jpg") no-repeat;
+    background-image: url("images/salad_bowl.jpg");
+    background-size: cover;
+}

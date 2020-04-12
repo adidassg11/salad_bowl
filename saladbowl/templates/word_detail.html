@@ -1,8 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'saladbowl/style.css' %}">
+
 <h1>{{ word.value }}</h1>
 
 Belongs to
 <ul>
     <li>Round: {{ word.round }}</li>
     <li>Game: {{ game.name }}</li>
-    <li>Creator: <a href=" ">{{ creator.name }}</a> (Team "{{ creator.team }}")</li>
+    <li>Creator: <a href="{% url 'player_detail' creator.id %}">{{ creator.name }}</a> (Team "{{ creator.team }}")</li>
 </ul>

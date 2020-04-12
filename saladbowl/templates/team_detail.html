@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'saladbowl/style.css' %}">
+
 <h1>{{ team.name }}</h1>
 
 Belongs to game: <a href="/game/{{ game.id }}">{{ game.name }}</a>
